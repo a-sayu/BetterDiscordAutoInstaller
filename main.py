@@ -77,13 +77,13 @@ latest_installed_discord_version = get_latest_installed_discord_folder_name(DISC
 while True:
     discord_path = os.path.join(DISCORD_PARENT_PATH, latest_installed_discord_version)
 
-    if not os.path.exists(os.path.join(DISCORD_PARENT_PATH, 'Update.exe')) and not os.path.exists(os.path.join(discord_path, 'Discord.exe')):
-        if os.path.exists(os.path.join(DISCORD_PTB_PATH, 'Update.exe')):
+    if not os.path.exists(os.path.join(DISCORD_PARENT_PATH, 'Discord.exe')) and not os.path.exists(os.path.join(discord_path, 'Discord.exe')):
+        if os.path.exists(os.path.join(DISCORD_PTB_PATH, 'Discord.exe')):
             DISCORD_PARENT_PATH = DISCORD_PTB_PATH
-        elif os.path.exists(os.path.join(DISCORD_CANARY_PATH, 'Update.exe')):
+        elif os.path.exists(os.path.join(DISCORD_CANARY_PATH, 'Discord.exe')):
             DISCORD_PARENT_PATH = DISCORD_CANARY_PATH
         else:
-            logger.info(f'Discord was not found at "{DISCORD_PARENT_PATH}".\nEnter the path to folder with "Update.exe" for normal installations or full path of ~/scoop/apps/discord/current/app for scoop installations')
+            logger.info(f'Discord was not found at "{DISCORD_PARENT_PATH}".\nEnter the path to folder with "Discord.exe" for normal installations or full path of ~/scoop/apps/discord/current/app for scoop installations')
             DISCORD_PARENT_PATH = input('\n=> ')
             dump_settings()
     else:

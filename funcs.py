@@ -12,11 +12,11 @@ def start_discord(discord_parent_path: str):
         subprocess.Popen(f'{os.path.join(discord_parent_path, latest_installed_discord_version, "Discord.exe")}', stdout=subprocess.DEVNULL)
     else:
         if 'DiscordPTB' in discord_parent_path:
-            subprocess.Popen(f'{os.path.join(discord_parent_path, "Update.exe")} --processStart DiscordPTB.exe')
+            subprocess.Popen(f'{os.path.join(discord_parent_path, "Discord.exe")} --processStart DiscordPTB.exe')
         elif 'DiscordCanary' in discord_parent_path:
-            subprocess.Popen(f'{os.path.join(discord_parent_path, "Update.exe")} --processStart DiscordCanary.exe')
+            subprocess.Popen(f'{os.path.join(discord_parent_path, "Discord.exe")} --processStart DiscordCanary.exe')
         else:
-            subprocess.Popen(f'{os.path.join(discord_parent_path, "Update.exe")} --processStart Discord.exe')
+            subprocess.Popen(f'{os.path.join(discord_parent_path, "Discord.exe")} --processStart Discord.exe')
     os.chdir(script_working_dir)
 
 def get_discord_state() -> tuple[bool, bool]:
