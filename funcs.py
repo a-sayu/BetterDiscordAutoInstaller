@@ -210,7 +210,7 @@ def start_discord(discord_parent_path: str):
     else:
         executable_name = "Discord.exe"  # Default to stable Discord
 
-    update_exe = os.path.join(discord_parent_path, "Update.exe")
+    update_exe = os.path.join(discord_parent_path, "Discord.exe")
     if not os.path.exists(update_exe):
         raise FileNotFoundError(f"Update.exe not found in: {discord_parent_path}")
 
